@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context 
+           https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!-- <context:annotation-config /> -->
+
+<!--  
+	<bean id="s1" class="com.springcore.lifecycle.Samosa"
+		init-method="init" destroy-method="destroy">
+		<property name="price" value="15" />
+	</bean>
+
+	<bean id="p1" class="com.springcore.lifecycle.Pepsi">
+		<property name="price" value="20" />
+	</bean>
+	-->
+    
+  <bean id="e1" class="com.springcore.lifecycle.Example">
+		<property name="subject" value="Computer Sciences" />
+	</bean>
+<!-- single annotation enable -->
+<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+</beans>

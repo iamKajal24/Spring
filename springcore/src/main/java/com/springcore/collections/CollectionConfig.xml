@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context 
+           https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Example: Bean definitions -->
+	<bean name="emp1" class="com.springcore.collections.Emp">
+		<property name="name" value="radha" />
+
+		<!-- list -->
+		<property name="phone">
+			<list>
+				<value>765758</value>
+				<value>876832</value>
+				<value>858499</value>
+				<value>346546</value>
+				<value>652346</value>
+			</list>
+		</property>
+
+		<!-- set -->
+		<property name="addresses">
+			<set>
+				<value>Delhi</value>
+				<value>Haridwar</value>
+				<value>Dehradun</value>
+				<value>Gujraat</value>
+				<value>Mumbai</value>
+			</set>
+		</property>
+
+		<!-- map -->
+
+		<property name="course">
+			<map>
+				<entry key="java" value="2 months" />
+				<entry key="JDBC" value="15 days" />
+				<entry key="JSP-SERVLET" value="2 months" />
+				<entry key="Hibernate" value="1.5 months" />
+				<entry key="Spring" value="2 months" />
+			</map>
+		</property>
+		
+		<property name="props">
+		<props>
+		<prop key="name">Radha</prop>
+		<prop key="email">radha123@gmail.com</prop>
+		<prop key="password">radhasharma</prop>
+		</props>
+		</property>
+		
+	</bean>
+</beans>

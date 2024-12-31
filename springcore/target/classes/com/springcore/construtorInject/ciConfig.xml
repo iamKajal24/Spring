@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context 
+           https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Certificate Bean -->
+	<bean id="cer" class="com.springcore.construtorInject.Certificate">
+		<constructor-arg value="Python Programming" />
+	</bean>
+
+	<!-- Person Bean -->
+	<bean id="person" class="com.springcore.construtorInject.Person">
+		<constructor-arg value="Kajal" />
+		<constructor-arg value="24" />
+		<constructor-arg ref="cer" />
+	</bean>
+
+	<bean id="add" class="com.springcore.construtorInject.Addition">
+		<constructor-arg value="12" type="int" index="1" />
+		<constructor-arg value="34" type="int" index="0"/>
+	</bean>
+
+
+</beans>
