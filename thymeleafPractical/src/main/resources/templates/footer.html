@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Footer Template</title>
+</head>
+<body>
+
+<!-- static  -->
+<!-- <footer id="fragment_tag" th:fragment="footer1">
+<div class="container">
+<h1>About kajal pandit</h1>
+<h2>Provide Good content about programming</h2>
+<h1>Feel free to contact and work with me</h1>
+
+<p>Optional. If specified, the random text start at a random word of the "lorum ipsum" text
+<p>
+</div>
+</footer> -->
+<!-- static end -->
+
+<!-- dynamic start -->
+
+<footer id="fragment_tag" th:fragment="footer1(title, sub_title)">
+  <div class="container">
+    <h1 th:text="${title}"></h1>
+    <h2 th:text="${sub_title}"></h2>
+    <h2>Provide Good content about programming</h2>
+    <h1>Feel free to contact and work with me</h1>
+    <p>
+      Optional. If specified, the random text starts at a random word of the "lorem ipsum" text.
+    </p>
+  </div>
+</footer>
+
+
+<!-- dynamic end -->
+	
+</body>
+</html>
