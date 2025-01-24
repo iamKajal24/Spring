@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Login here</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+	crossorigin="anonymous">
+</head>
+<body style="background:#e2e2e2;">
+
+
+	<div class="container">
+		<div class="row mt-5">
+			<div class="col-md-6 offset-md-3">
+				<form th:action="@{/process}" method="post" class="bg-white p-4 shadow-lg" th:object="${loginData}">
+					<h1 class="text-center">Sing up</h1>
+					<div class="mb-3">
+						<label for="exampleInputEmail1" class="form-label">User
+							Name</label> <input type="text" name="username"
+							th:value="${loginData.username}"
+							th:classappend="${#fields.hasErrors('username') ? 'is-invalid' : ''}"
+							class="form-control" id="exampleInputEmail1"
+							aria-describedby="emailHelp">
+
+						<!-- Display validation errors for username -->
+						<div th:if="${#fields.hasErrors('username')}"
+							class="invalid-feedback">
+							<p th:each="error : ${#fields.errors('username')}"
+								th:text="${error}"></p>
+						</div>
+					</div>
+
+
+					<div class="mb-3">
+						<label for="exampleInputEmail1" class="form-label">Email</label> <input
+							type="email" name="email" th:value="${loginData.email}"
+							th:classappend="${#fields.hasErrors('email') ? 'is-invalid' : ''}"
+							class="form-control" id="exampleInputEmail1">
+
+						<!-- Display validation errors for email -->
+						<div th:if="${#fields.hasErrors('email')}"
+							class="invalid-feedback">
+							<p th:each="error : ${#fields.errors('email')}"
+								th:text="${error}"></p>
+						</div>
+					</div>
+
+					<div class="mb-3 form-check">
+						<input type="checkbox" name="agreed"
+							th:field="${loginData.agreed}" 
+							th:classappend="${#fields.hasErrors('agreed') ? 'is-invalid' : ''}"
+							class="form-check-input"
+							id="exampleCheck1"> <label class="form-check-label"
+							for="exampleCheck1">Agree terms and conditions</label>
+
+						<!-- Display validation errors for agreed -->
+						<div th:if="${#fields.hasErrors('agreed')}"
+							class="invalid-feedback">
+							<p th:each="error : ${#fields.errors('agreed')}"
+								th:text="${error}"></p>
+						</div>
+					</div>
+
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>
