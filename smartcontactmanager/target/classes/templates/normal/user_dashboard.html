@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{normal/base::layout(~{::section})}">
+<head>
+    <title>User Dashboard</title>
+</head>
+<body>
+    <section>
+        <h1 class="text-center">User Dashboard</h1>
+        <p class="text-center">Welcome to your private dashboard. Manage your contacts easily.</p>
+        <div class="text-center mt-4">
+            <a class="btn btn-primary" th:href="@{/user/add-contact}">Add Contact</a>
+            <a class="btn btn-secondary" th:href="@{/view-contacts}">View Contacts</a>
+        </div>
+    </section>
+</body>
+</html>
+
